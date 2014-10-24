@@ -1,0 +1,7 @@
+parameters:
+#    yamei_user.example.class: Yamei\UserBundle\Example
+
+services:
+#    yamei_user.example:
+#        class: %yamei_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,91 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+  <div id="wrapper" class="screen_wide">
+      <div id="header">
+          <div class="wrap">
+              <a href="index.html" class="logo"></a>
+              <div class="buttons">
+                  <div class="item">                        
+                      <div class="btn-group">                        
+                          <a href="#" class="btn btn-primary btn-small dropdown-toggle" data-toggle="dropdown">
+                              <span class="i-forward"></span>
+                          </a>
+                          <ul class="dropdown-menu">
+                              <li><a href="#"><span class="i-profile"></span> Profile</a></li>
+                              <li><a href="#"><span class="i-forward"></span> Logout</a></li>
+                          </ul> 
+                      </div>
+                  </div>                
+              </div>
+          </div>
+      </div>
+      <div id="layout">
+        
+            <div id="sidebar">
+
+                <div class="user">
+                    <div class="pic">
+                        <img src="img/examples/users/dmitry_m.jpg"/>
+                    </div>
+                    <div class="info">
+                        <div class="name">
+                            <a href="#">{{ app.user.username}}</a>
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="navigation">
+                    <li class="active">
+                        <a href="index.html">Dashboard</a>
+                    </li>              
+                    <li class="openable">
+                        <a href="#">Raw data</a>
+                        <ul>
+                            <li><a href="{{path('yamei_rec_eye_showRequest')}}">Requests</a></li>
+                             <li><a href="#">Htttp Request</a></li>
+                             <li><a href="{{path('yamei_rec_eye_manageUser')}}" title="manageUser">Manage User</a></li>
+                        </ul>
+                    </li>                                   
+                </ul>
+
+            </div>
+
+            <div id="content">                        
+                <div class="wrap">
+                    <div class="head">
+                        <div class="info">
+                            <h1>Dashboard</h1>
+                            <ul class="breadcrumb">
+                                <li class="active">Dashboard</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="search">
+                            <form action="" method="post">
+                                <input type="text" placeholder="search..."/>                                
+                                <button type="submit"><span class="i-calendar"></span></button>
+                                <button type="submit"><span class="i-magnifier"></span></button>
+                            </form>
+                        </div>                        
+                    </div>                                                                    
+                    
+                    <div class="content">
+                        <div class="row-fluid">
+  {#                          <div class="span6">    
+                             1                                 
+                            </div>
+                            <div class="span6">
+                                2                            
+                            </div>     #}                       
+                        </div>
+                        {% block fos_user_content %} {% endblock %}
+                        
+                    </div>
+                        
+                </div>
+            </div>
+      </div>
+  </div>
+	
+{% endblock %}

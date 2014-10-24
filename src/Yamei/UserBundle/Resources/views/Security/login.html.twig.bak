@@ -1,0 +1,54 @@
+{% extends "::layout.html.twig" %}
+{% block body %}
+<div id="wrapper" class="screen_wide sidebar_off">       
+    <div id="layout">
+        <div id="content">                        
+            <div class="wrap nm">            
+                
+                <div class="signin_block">
+                    <div class="row-fluid">
+                        <div class="alert alert-info">
+                            <strong>Howdy!</strong> Please, don't tell anyone your password
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        </div>
+                        <div class="block">
+                            <div class="head">
+                                <h2>Sign in</h2>                                    
+                                <ul class="buttons">                                        
+                                    <li><a href="#" class="tip" title="Contact administrator"><i class="i-warning"></i></a></li>
+                                    <li><a href="#" class="tip" title="Forget your password?"><i class="i-locked"></i></a></li>
+                                </ul>                                     
+                            </div>
+                            <form action="{{ path("fos_user_security_check") }}" method="post">
+												    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            <div class="content np">
+                                <div class="controls-row">
+                                    <div class="span3">Login:</div>
+                                    <div class="span9"><input type="text" name="login" class="input-block-level" value=""/></div>
+                                </div>
+                                <div class="controls-row">
+                                    <div class="span3">Password:</div>
+                                    <div class="span9"><input type="password" name="password" class="input-block-level" value=""/></div>
+                                </div>                                
+                            </div>
+                            <div class="footer">
+                                <div class="side fl">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="kmsi"/> Keep me signed in
+                                    </label>
+                                </div>
+                                <div class="side fr">
+                                    <button class="btn btn-primary">Sign in</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>               
+    
+</div>
+{% endblock body %}

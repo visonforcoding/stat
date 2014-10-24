@@ -1,0 +1,7 @@
+yamei_rec_eye:
+    resource: "@YameiRecEyeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+yamei_user:
+    resource: "@YameiUserBundle/Resources/config/routing.yml"
+    prefix:   /

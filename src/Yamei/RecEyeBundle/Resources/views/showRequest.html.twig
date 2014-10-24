@@ -1,0 +1,60 @@
+{% extends "::layout.html.twig" %}
+{% block stylesheets %}
+<style type="text/css">
+    #table_box{
+        margin-top: 20px;
+    }
+</style>
+ {% endblock %}
+{% block fos_user_content %} 
+<div id="table_box">
+     <table id="list"></table> 
+    <div id="pager"></div> 
+</div>
+
+{% endblock %}
+{% block javascripts %}
+<script type="text/javascript">
+    $(function(){
+        $("#list").jqGrid({
+        url: "{{path('yamei_rec_eye_getRequestList')}}",
+        datatype: "json",
+        mtype: "POST",
+        colNames: ["用户", "协议", "主机", "路径","参数","请求方式","请求时间", "源IP", "源端口","目的IP","目的端口"],
+        colModel: [
+            { name: "username", width: 55 , align: "center"},
+            { name: "protocol", width: 90, align: "center" },
+            { name: "hostname", width:210, align: "left" },
+            { name: "path", width:210, align: "left" },
+            { name: "params", width:210, align: "center" },
+            { name: "method", width:90, align: "center" },
+            { name: "req_time", width:150, align: "center" ,sortable:true},
+            { name: "from_ip4", width:150, align: "center" },
+            { name: "from_port", width: 100, align: "center", sortable: false },
+            { name: "to_ip4", width: 150, align: "center", sortable: false },
+            { name: "to_port", width: 100, align: "center", sortable: false }
+        ],
+        pager: "#pager",
+        rownumbers:true,
+        rowNum: 10,
+        rowList: [10, 20, 30],
+        sortname: "id",
+        sortorder: "desc",
+        viewrecords: true,
+        gridview: true,
+        autoencode: true,
+        caption: "request data",
+        height:"auto",
+        autowidth:true,
+        jsonReader: {
+                        root: "rows",
+                        page: "page",
+                        total: "total",
+                        records: "records",
+                        repeatitems: false,
+                        id: "0"
+                    }
+    }); 
+    });
+</script>
+{% endblock %}

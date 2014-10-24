@@ -1,0 +1,45 @@
+yamei_rec_eye_dashboard:
+    pattern:  /
+    defaults: { _controller: YameiRecEyeBundle:RecEye:index }
+
+yamei_rec_eye_manager_dashboard:
+    pattern:  /manager
+    defaults: { _controller: YameiRecEyeBundle:RecEye:indexManager }
+
+yamei_rec_eye_extract_files:
+    pattern:  /extract
+    defaults: { _controller: YameiRecEyeBundle:RecEye:extractFiles }
+
+yamei_rec_eye_parse_files:
+    pattern:  /parse
+    defaults: { _controller: YameiRecEyeBundle:RecEye:parseFiles }
+yamei_rec_eye_showRequest:
+    pattern:  /showRequest
+    defaults: { _controller: YameiRecEyeBundle:GetList:showRequest}
+yamei_rec_eye_getRequestList:
+    pattern:  /getRequestList
+    defaults: { _controller: YameiRecEyeBundle:GetList:getRequestList}
+
+yamei_rec_eye_manageUser:
+    pattern:  /manageUser
+    defaults: { _controller: YameiRecEyeBundle:ManageUser:manage}
+    
+yamei_rec_eye_getUserList:
+    pattern:  /getUserList
+    defaults: { _controller: YameiRecEyeBundle:ManageUser:getUserList}
+    
+yamei_rec_eye_editUser:
+    pattern:  /editUser
+    defaults: { _controller: YameiRecEyeBundle:ManageUser:editUser}
+    
+yamei_rec_eye_delUser:
+    pattern:  /delUser
+    defaults: { _controller: YameiRecEyeBundle:ManageUser:delUser}
+    
+yamei_rec_eye_addUser:
+    pattern:  /addUser
+    defaults: { _controller: YameiRecEyeBundle:ManageUser:addUser}
+    
+yamei_rec_eye_chPwd:
+    pattern:  /chPwd
+    defaults: { _controller: YameiRecEyeBundle:ManageUser:chPwd}

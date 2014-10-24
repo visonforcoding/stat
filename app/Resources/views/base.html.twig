@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
+        <meta charset="UTF-8" />
+        <title>{% block title %}Rec Eye!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('bundles/css/stylesheets.css')}}" rel="stylesheet" type="text/css" />
+{#<script type="text/javascript" src="{{asset('bundles/js/import.js')}}"></script>#}
+{#<script type="text/javascript" src="{{asset('bundles/js/jquery-2.0.0.min.js')}}"></script>#}
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/jquery-migrate-1.1.1.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/jquery-ui-1.10.3.custom.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/bootstrap.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/jquery.cookies.2.2.0.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/jquery.scrollup.min.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/actions.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/globalize.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/plugins.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/grid.locale-cn.js')}}"></script>
+        <script type="text/javascript" src="{{asset('bundles/js/jquery.jqGrid.min.js')}}"></script>
+        {% block js %} {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
